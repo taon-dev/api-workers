@@ -1,0 +1,93 @@
+@use './vars.scss' as vars;
+// @use 'bootstrap/scss/bootstrap' as *; Conflict with primeflex
+@use '@angular/material' as mat;
+
+// tailwind included out of box
+
+@import 'primeicons/primeicons.css';
+@import 'animate.css/animate.min.css';
+
+@include mat.core();
+
+// Light palette
+$light-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+    ),
+  )
+);
+
+// Dark palette
+$dark-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: dark,
+      primary: mat.$azure-palette,
+    ),
+  )
+);
+
+// Apply scoped themes
+.light-taon-theme {
+  // color-scheme: light;
+  @include mat.all-component-themes($light-theme);
+  --main-bg-color: rgb(255, 255, 255);
+  --font-color: rgb(14, 15, 26);
+}
+
+.dark-taon-theme {
+  // color-scheme: dark;
+  @include mat.all-component-themes($dark-theme);
+  --main-bg-color: rgb(42, 56, 71);
+  --font-color: rgb(198, 210, 219);
+  --mat-sys-primary: #4758b8;
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('#{ vars.$basename }assets/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2')
+    format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+.ng-scroll-content {
+  // TODO QUICK_FIX for modal mode
+  display: block !important;
+}
+
+body,
+html {
+  font-family: 'Roboto', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
+  color: var(--font-color);
+  background: var(--main-bg-color);
+
+  transition:
+    background 200ms ease,
+    color 200ms ease;
+
+  margin: 0px !important; // TODO QUICK FIX for weird chrome padding
+  overflow: hidden; // for ngx-scrollbar to work
+}

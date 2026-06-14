@@ -1,0 +1,97 @@
+// THIS FILE IS GENERATED - DO NOT MODIFY
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Vitest (all *.test.ts files)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/vitest/vitest.mjs",
+      "args": [
+        "run",
+        "--environment",
+        "node",
+        "--testTimeout",
+        "60000"
+      ],
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "smartStep": true
+    },
+    {
+      "name": "Run Vitest (editor active test file)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/vitest/vitest.mjs",
+      "args": [
+        "run",
+        "${fileBasenameNoExtension}",
+        "--environment",
+        "node",
+        "--testTimeout",
+        "60000"
+      ],
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "smartStep": true
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Run Server for app.ts",
+      "program": "${workspaceFolder}/run.js",
+      "args": [],
+      "runtimeArgs": [
+        "--preserve-symlinks"
+      ]
+    },
+    {
+      "name": "Run Electron",
+      "type": "node",
+      "request": "launch",
+      "protocol": "inspector",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
+      "trace": "verbose",
+      "runtimeArgs": [
+        "--serve",
+        ".",
+        "--remote-debugging-port=9888"
+      ],
+      "windows": {
+        "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron.cmd"
+      }
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach to global cli tool",
+      "autoAttachChildProcesses": false,
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "port": 9222
+    },
+    {
+      "name": "Run Vscode Plugin",
+      "type": "extensionHost",
+      "request": "launch",
+      "runtimeExecutable": "${execPath}",
+      "sourceMaps": true,
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
+      ],
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}/tmp-vscode-proj/development/api-workers"
+      ],
+      "preLaunchTask": "Update package.json vscode metadata"
+    }
+  ],
+  "compounds": []
+}
+// THIS FILE IS GENERATED - DO NOT MODIFY

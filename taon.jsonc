@@ -34,7 +34,7 @@
   "packageJsonOverride": {
     "author": "Darek",
     "description": "Description for api-workers. Hello world!",
-    "private": true,
+    "private": false,
     "scripts": {},
   },
 }

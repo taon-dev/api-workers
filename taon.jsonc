@@ -2,25 +2,32 @@
   "type": "isomorphic-lib",
   "version": "v21",
   "appId": "com.domain.example.api-workers",
+  "autoReleaseConfigAllowedItems": [
+    {
+      "artifactName": "npm-lib-and-cli-tool",
+      "releaseType": "manual",
+      "taskName": "npm",
+    },
+    {
+      "artifactName": "angular-node-app",
+      "askUserBeforeFinalAction": true,
+      "envName": "static-pages",
+      "releaseType": "static-pages",
+      "taskName": "static-pages",
+    },
+    {
+      "artifactName": "angular-node-app",
+      "askUserBeforeFinalAction": false,
+      "envName": "localhost",
+      "releaseType": "manual",
+      "taonInstanceIp": "127.0.0.1",
+      "taskName": "localhost",
+    },
+  ],
 
-  "autoReleaseConfigAllowedItems": [{
-    "artifactName": "npm-lib-and-cli-tool",
-    "releaseType": "manual",
-    "taskName": "npm"
-  }, {
-    "artifactName": "angular-node-app",
-    "askUserBeforeFinalAction": true,
-    "envName": "static-pages",
-    "releaseType": "static-pages",
-    "taskName": "static-pages"
-  }, {
-    "artifactName": "angular-node-app",
-    "askUserBeforeFinalAction": false,
-    "envName": "localhost",
-    "releaseType": "manual",
-    "taonInstanceIp": "127.0.0.1",
-    "taskName": "localhost"
-  }],
+  "isomorphicDependenciesForNpmLib": ["tnp-core"],
+
+  "overrideNpmName": "@taon-dev/api-workers",
 
   "shouldGenerateAutogenIndexFile": true,
 
@@ -28,6 +35,6 @@
     "author": "Darek",
     "description": "Description for api-workers. Hello world!",
     "private": true,
-    "scripts": {}
-  }
+    "scripts": {},
+  },
 }

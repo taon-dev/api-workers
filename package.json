@@ -1,6 +1,6 @@
 {
   "name": "@taon-dev/api-workers",
-  "version": "21.0.4",
+  "version": "21.0.7",
   "scripts": {
     "taon init": "taon init",
     "taon start": "taon start",

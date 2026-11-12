@@ -4,7 +4,7 @@ import { path, fse } from 'tnp-core/src';
 
 import start from './app';
 import { FRONTEND_HOST_URL_ELECTRON } from './app.hosts';
-import { ENV_ELECTRON_APP_BUILD_ELECTRON_SHOW_DEV_TOOLS } from './lib/env';
+import { ENV_ELECTRON_APP_BUILD_ELECTRON_SHOW_DEV_TOOLS } from './lib/env/env.electron-app';
 
 let win: BrowserWindow | null = null;
 const args = process.argv.slice(1);

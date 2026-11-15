@@ -1,7 +1,7 @@
 {
   "json.schemas": [{
     "fileMatch": ["/taon.jsonc"],
-    "url": "./taon-config-standalone.schema.json"
+    "url": "./taon-config.schema.json"
   }],
 
   "workbench.colorCustomizations": {
@@ -15,7 +15,8 @@
     "tmp-*/**": true,
     "**/node_modules/**": true,
     "**/dist/**": true,
-    "**/dist-nocutsrc/**": true
+    "**/dist-nocutsrc/**": true,
+    "**/src/**": true
   },
 
   "[markdown]": {
@@ -122,7 +123,9 @@
     "databases": true,
     "**/.ai": true,
     "**/databases": true,
-    "sub-projects": true
+    "sub-projects": true,
+    "**/src/app.auto-gen-docs.md": true,
+    "**/src/app.auto-gen-ver.js": true
   },
 
   "window.title": "taon-dev/api-workers () [ ${activeEditorShort}]",
